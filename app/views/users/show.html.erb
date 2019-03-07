@@ -7,8 +7,9 @@
 
 <p>
   <strong>Image:</strong>
-  <%= @user.image %>
+  <%= image_tag(@user.image.retina.url, size: '80x80') %>
+  <p><%= @user.image.retina.url %></p>
 </p>
 
-<%= link_to 'Edit', edit_user_path(@user) %> |
+<%= link_to 'Edit', edit_user_path(@user) %>
 <%= link_to 'Back', users_path %>
