@@ -6,9 +6,11 @@
 </p>
 
 <p>
-  <strong>Image:</strong>
-  <%= image_tag(@user.image.retina.url, size: '80x80') %>
-  <p><%= @user.image.retina.url %></p>
+  <strong>Cl_Image:</strong>
+  <% if @user.cl_image.present? %>
+    <%= cl_image_tag(@user.cl_image.retina.filename, width: 80, height: 80, fetch_format: :auto, crop: :fill) %>
+    <p><%= @user.cl_image.retina.url %></p>
+  <% end %>
 </p>
 
 <%= link_to 'Edit', edit_user_path(@user) %>

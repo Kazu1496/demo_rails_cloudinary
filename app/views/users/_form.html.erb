@@ -16,9 +16,16 @@
     <%= f.text_field :name %>
   </div>
 
-  <div class="field">
+  <!-- CarrierWaveのみでの画像アップロード用 -->
+  <!-- <div class="field">
     <%= f.label :image %>
     <%= f.file_field :image %>
+  </div> -->
+
+  <!-- CarrierWave + Cloudinaryでの画像アップロード用 -->
+  <div class="field">
+    <%= f.label :cl_image %>
+    <%= f.file_field :cl_image %>
   </div>
 
   <div class="actions">

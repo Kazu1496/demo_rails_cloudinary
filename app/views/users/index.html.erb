@@ -15,7 +15,7 @@
     <% @users.each do |user| %>
       <tr>
         <td><%= user.name %></td>
-        <td><%= image_tag(user.image.retina.url, size: '80x80') %></td>
+        <td><%= cl_image_tag(user.cl_image.retina.filename, width: 80, height: 80, fetch_format: :auto, crop: :fill) %></td>
         <td><%= link_to 'Show', user %></td>
         <td><%= link_to 'Edit', edit_user_path(user) %></td>
         <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
